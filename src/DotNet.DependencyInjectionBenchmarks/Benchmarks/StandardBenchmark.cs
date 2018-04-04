@@ -43,6 +43,12 @@ namespace DotNet.DependencyInjectionBenchmarks.Benchmarks
         {
             SetupContainerForTest(CreateMicrosoftDependencyInjectionContainer(), Definitions, Warmup);
         }
+        [GlobalSetup(Target = "UnityDependencyInjection")]
+        public void UnityDependencyInjectionSetup()
+        {
+            SetupContainerForTest(CreateUnityContainer(), Definitions, Warmup);
+        }
+
 
         [GlobalSetup(Target = "NInject")]
         public void NInjectSetup()

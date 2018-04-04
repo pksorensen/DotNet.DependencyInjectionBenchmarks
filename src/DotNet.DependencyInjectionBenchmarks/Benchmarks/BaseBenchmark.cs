@@ -17,6 +17,7 @@ namespace DotNet.DependencyInjectionBenchmarks.Benchmarks
         protected IContainer GraceContainer;
         protected IContainer LightInjectContainer;
         protected IContainer MicrosoftDependencyInjectionContainer;
+        protected IContainer UnityDependencyInjectionContainer;
         protected IContainer NInjectContainer;
         protected IContainer SimpleInjectorContainer;
         protected IContainer StructureMapContainer;
@@ -49,6 +50,11 @@ namespace DotNet.DependencyInjectionBenchmarks.Benchmarks
         protected IContainer CreateMicrosoftDependencyInjectionContainer()
         {
             return MicrosoftDependencyInjectionContainer = new MicrosoftDependencyInjectionContainer();
+        }
+        
+        protected IContainer CreateUnityContainer()
+        {
+            return UnityDependencyInjectionContainer = new UnityContainer();
         }
 
         protected IContainer CreateNInjectContainer()

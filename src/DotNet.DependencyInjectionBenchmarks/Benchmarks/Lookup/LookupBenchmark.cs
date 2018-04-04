@@ -85,12 +85,23 @@ namespace DotNet.DependencyInjectionBenchmarks.Benchmarks.Lookup
         {
             SetupContainerForLookup(CreateMicrosoftDependencyInjectionContainer());
         }
+        [GlobalSetup(Target = nameof(UnityDependencyInjection))]
+        public void UnityDependencyInjectionSetup()
+        {
+            SetupContainerForLookup(CreateUnityContainer());
+        }
 
         [Benchmark]
         [BenchmarkCategory(nameof(MicrosoftDependencyInjection))]
         public void MicrosoftDependencyInjection()
         {
             ExecuteBenchmark(MicrosoftDependencyInjectionContainer);
+        }
+        [Benchmark]
+        [BenchmarkCategory(nameof(UnityDependencyInjection))]
+        public void UnityDependencyInjection()
+        {
+            ExecuteBenchmark(UnityDependencyInjectionContainer);
         }
 
         [GlobalSetup(Target = nameof(NInject))]
